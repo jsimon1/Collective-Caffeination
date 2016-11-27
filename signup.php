@@ -1,4 +1,50 @@
-
+<?php
+  include("connect.inc.php");
+  if (isset($_GET['new'])){
+    extract($_POST);
+    $query1 = "SELECT * FROM users WHERE email = '$rpi_email'";
+    $res1 = $mysqli->query($query1);
+    if ($res1->num_rows != 0){
+      echo "<h1>An account with that e-mail has already been created.</h1>";
+    }
+    else{
+      $pwd = $password;
+      $email = $rpi_email;
+      $fName = $first_name;
+      $lName = $last_name;
+      $fName = addslashes($fName);
+      $lName = addslashes($lName);
+      //Email Validator
+      if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $allowedChars ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789./';
+        $charsLen = 63;
+        $saltLength = 21;
+        $salt = "";
+        for($i=0; $i<$saltLength; $i++){
+            $salt .= $allowedChars[mt_rand(0,$charsLen)];
+        }
+        $hashedPassword = crypt($pwd, $salt);
+        $query = "INSERT INTO users (email, password, first_name, last_name, salt, fb_link, profile_img) VALUES ('$email', '$hashedPassword', '$fName', '$lName', '$salt', 'No link', 'No link')";
+        $returnedQuery= $mysqli->query($query);
+        if(!$returnedQuery){
+          $mysqli->error;
+          echo $query;
+        }
+        else{
+          session_start();
+          $_SESSION['email']=$rpi_email;
+          $_SESSION['fName']=$first_name;
+          $_SESSION['lName']=$last_name;
+          header('Location: meetups.php');
+          exit;
+        }
+      }
+      else{
+        echo "The email entered is not a valid RPI address";
+      }
+    }
+  }
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -43,20 +89,20 @@
                 <form action="signup.php?new" method="post" class="card-panel">
                   <div class="row">
                     <div class="input-field col s6">
-                      <input placeholder="First Name" id="first_name" type="text" class="validate">
+                      <input placeholder="First Name" name="first_name" id="first_name" type="text" class="validate">
                     </div>
                     <div class="input-field col s6">
-                      <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                      <input placeholder="Last Name" name="last_name" id="last_name" type="text" class="validate">
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input placeholder="RPI Email" id="rpi_email" type="text" class="validate">
+                      <input placeholder="RPI Email" name="rpi_email" id="rpi_email" type="text" class="validate">
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input placeholder="Password (don't forget!)" id="password" type="text" class="validate">
+                      <input placeholder="Password (don't forget!)" name="password" id="password" type="password" class="validate">
                     </div>
                   </div>
                   <div class="row">

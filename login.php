@@ -1,4 +1,27 @@
-
+<?php
+  include("connect.inc.php");
+  if (isset($_GET['login'])){
+    extract($_POST);
+    $query = "SELECT * FROM users WHERE email = '$rpi_email'";
+    //echo $query;
+    $result = $mysqli->query($query);
+    $row = $result->fetch_assoc();
+    $salt = $row['salt'];
+    $checkPwd = crypt($password,$salt);
+    if ($checkPwd == $row['password']){
+      $success = true;
+      session_start();
+      $_SESSION['email']=$row['email'];
+      $_SESSION['fName']=$row['first_name'];
+      $_SESSION['lName']=$row['last_name'];
+      header('Location: meetups.php');
+      exit;
+    }
+    else{
+      $success = false;
+    }
+  }
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,6 +31,7 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
 
     <link type="text/css" rel="stylesheet" href="./css/websys-site.css"/>
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -29,44 +53,32 @@
       </nav>
     </div>
 
-    <main>
+      <main>
         <div class="container">
           <div class="row">
             <div class="section">
               <div class="col s8 offset-s2">
-                <h2 class="title orange-text text-orange-darken-4"">Better latte than never!</h2>
-                <div class="content">
-                  <h5>Sign up and join our community. &#9996</h5>
-                </div>
+                <span class="title orange-text text-orange-darken-4"><h2>Welcome back!</h2></span>
               </div>
               <div class="col s8 offset-s2">
-                <form action="signup.php?new" method="post" class="card-panel">
+                <form action="login.php?login" method="post" class="card-panel">
                   <div class="row">
-                    <div class="input-field col s6">
-                      <input placeholder="First Name" id="first_name" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s6">
-                      <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                    <div class="input-field col s12">
+                      <input placeholder="RPI Email" name="rpi_email" id="rpi_email" type="text" class="validate">
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input placeholder="RPI Email" id="rpi_email" type="text" class="validate">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input placeholder="Password (don't forget!)" id="password" type="text" class="validate">
+                      <input placeholder="Password (don't forget!)" name="password" id="password" type="text" class="validate">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col s12 center-align">
-                      <button class="waves-effect waves-light btn orange darken-4" type="submit" name="action" value="join_adbeus">Espress-go!</button>
+                      <button class="waves-effect waves-light btn orange darken-4" type="submit" name="action" value="join_adbeus">Log In</button>
                     </div>
                   </div>
                 </form>
               </div>
-              <div class="col s12 center align"><br><a class="orange-text text-darken-4" href="login.html">Already have an account? Click here to login.</a></div>
             </div>
           </div>
         </div>
@@ -77,8 +89,8 @@
             <div class="row">
               <div class="col l6 s12">
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
-                  <li><a class="grey-text text-lighten-3" href="meetups.html">Meetups</a></li>
+                  <li><a class="grey-text text-lighten-3" href="about.php">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="meetups.php">Meetups</a></li>
                   <li><a class="grey-text text-lighten-3" href="login.html">Log In</a></li>
                   <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
                   <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
