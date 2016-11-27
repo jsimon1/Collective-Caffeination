@@ -6,64 +6,94 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
 
+    <link type="text/css" rel="stylesheet" href="./css/websys-site.css"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body>
+  <body class="brown lighten-5">
     <div class="navbar-fixed">
-      <nav>
+      <nav class="brown darken-2">
         <div class="container">
           <div class="nav-wrapper">
-            <a href="#!" class="brand-logo left"><img src="./images/coffee-logo.png" width="50"></a>
+            <a href="landing.html" class="brand-logo left"><img src="./images/cc-logo.png"></a>
             <ul class="right hide-on-med-and-down">
-              <li><a href="meetups.html">About</a></li>
-              <li class="active"><a href="meetups.html">Login</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="meetups.html">Meetups</a></li>
+              <li><a href="login.html">Login</a></li>
+              <a class="waves-effect waves-light btn orange darken-4" href="signup.html">Sign Up</a>
             </ul>
           </div>
         </div>
       </nav>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="section">
-          <div class="col s12 l6">
-            <h2 class="title">Better latte than never!</h2>
-            <div class="content">
-              <h5>Sign up for an account and join our community. Coffee is here for everyone. insert heart emoji</h5>
+    <main>
+        <div class="container">
+          <div class="row">
+            <div class="section">
+              <div class="col s8 offset-s2">
+                <h2 class="title orange-text text-orange-darken-4"">Better latte than never!</h2>
+                <div class="content">
+                  <h5>Sign up and join our community. &#9996</h5>
+                </div>
+              </div>
+              <div class="col s8 offset-s2">
+                <form method="POST" class="card-panel">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input placeholder="First Name" id="first_name" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s6">
+                      <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="RPI Email" id="rpi_email" type="text" class="validate">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="Password (don't forget!)" id="password" type="text" class="validate">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 center-align">
+                      <button class="waves-effect waves-light btn orange darken-4" type="submit" name="action" value="join_adbeus">Espress-go!</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col s12 center align"><br><a class="orange-text text-darken-4" href="login.html">Already have an account? Click here to login.</a></div>
             </div>
           </div>
-          <div class="col s12 l6">
-            <form method="POST" class="card-panel">
-              <div class="row">
-                <div class="input-field col s6">
-                  <input placeholder="First Name" id="first_name" type="text" class="validate">
-                </div>
-                <div class="input-field col s6">
-                  <input placeholder="Last Name" id="last_name" type="text" class="validate">
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input placeholder="RPI Email" id="rpi_email" type="text" class="validate">
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input placeholder="Password (don't forget!)" id="password" type="text" class="validate">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12 center-align">
-                  <button class="btn-large red" type="submit" name="action" value="join_adbeus">Espress-go!</button>
-                </div>
-              </div>
-            </form>
-          </div>
         </div>
-      </div>
-    </div>
+      </main>
+
+    <footer class="page-footer  brown darken-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="meetups.html">Meetups</a></li>
+                  <li><a class="grey-text text-lighten-3" href="login.html">Log In</a></li>
+                  <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
+                </ul>
+              </div>
+              <div class="col l6 s12">
+                <p class="grey-text text-lighten-4">Collective Caffeination is all about joining together. Something something Samm please put something in here.</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright brown darken-4">
+            <div class="container">
+              Made with &#9749 by WebSys Group 7
+            </div>
+          </div>
+    </footer>
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
