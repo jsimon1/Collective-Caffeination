@@ -11,24 +11,57 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo center">Logo</a>
-        <ul class="left hide-on-med-and-down">
-          <li><a href="meetups.html">Sass</a></li>
-          <li><a href="meetups.html">Components</a></li>
-          <li class="active"><a href="meetups.html">JavaScript</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo left"><img src="./images/coffee-logo.png" width="50"></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="meetups.html">About</a></li>
+              <li class="active"><a href="meetups.html">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <div class="container">
       <div class="row">
-
-      <!--add the content here-->
-
-
-
+        <div class="section">
+          <div class="col s12 l6">
+            <h2 class="title">Better latte than never!</h2>
+            <div class="content">
+              <h5>Sign up for an account and join our community. Coffee is here for everyone. insert heart emoji</h5>
+            </div>
+          </div>
+          <div class="col s12 l6">
+            <form method="POST" class="card-panel">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="First Name" id="first_name" type="text" class="validate">
+                </div>
+                <div class="input-field col s6">
+                  <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="RPI Email" id="rpi_email" type="text" class="validate">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="Password (don't forget!)" id="password" type="text" class="validate">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 center-align">
+                  <button class="btn-large red" type="submit" name="action" value="join_adbeus">Espress-go!</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
