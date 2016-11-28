@@ -64,48 +64,53 @@
     </div>
 
    <main>
-        <div class="container">
-          <div class="row">
-            <div class="section">
-              <div class="col s8 offset-s2">
-    <form action="createEvent.php?create" method="post">
-      <table>
-        <h3 align = "center">Create an Event</h3>
-        <tr>
-          <td>Location</td>
-          <td><select name="loc" required>
-              <option></option>
-              <option value="0">Student Union - Father's Marketplace</option>
-              <option value="1">DCC - Jazmine's</option>
-              <option value="2">Sage - The Beanery Cafe</option>
-              <option value="3">Pittsburgh - The Lally Gally</option>
-              <option value="4">Folsom Library - The Library Cafe</option>
-              <option value="5">EMPAC - Evelyn's</option>
-            </select>
-          </td>
-        </tr>
-        <?php
-          //Looking to the browser since datetime-local might not work with firefox, will need to put it in a fix
-          if (isset($_SERVER['HTTP_USER_AGENT'])) {
-            $agent = $_SERVER['HTTP_USER_AGENT'];
-          }
-        ?>
-        <tr>
-          <td>Month</td> 
-          <td><input type="number" name = "month"></td>
-          <td>Day</td> 
-          <td><input type="number" name = "day"></td>
-        </tr>
-        <tr>
-          <td>Hour</td> 
-          <td><input type="number" name = "hour"></td>
-          <td>Minute</td> 
-          <td><input type="number" name = "minute"></td>
-        </tr>
-      </table>
-      <td><input type="submit" value="Login" /> </td>
-
-    </form> 
-
-</body>
+      <div class="container">
+        <div class="row">
+          <div class="section">
+            <div class="col s8 offset-s2">
+              <h2 class = "title orange-text text-orange-darken-4">Create an Event</h2>
+            </div>
+            <div class="col s8 offset-s2">
+              <form action="createEvent.php?create" method="post">
+                <div class="row">
+                  <div class="col s8 center-align">
+                    <select name="loc" required>
+                      <option selected>Location</option>
+                      <option value="0">Student Union - Father's Marketplace</option>
+                      <option value="1">DCC - Jazmine's</option>
+                      <option value="2">Sage - The Beanery Cafe</option>
+                      <option value="3">Pittsburgh - The Lally Gally</option>
+                      <option value="4">Folsom Library - The Library Cafe</option>
+                      <option value="5">EMPAC - Evelyn's</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s2">
+                    <input placeholder="Month" type="number" name = "month" class = "validate">
+                  </div>
+                  <div class="input-field col s2">
+                    <input placeholder="Day" type="number" name = "day" class="validate">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s2">
+                    <input placeholder="Hour" type="number" name="day" class="validate">
+                  </div>
+                  <div class="input-field col s2">
+                    <input placeholder="Minute" type="number" name="day" class="validate">
+                  </div>
+                </div>
+                <div class = "row">
+                  <div class="col s12 center-align">
+                    <button class="waves-effect waves-light btn orange darken-4" type="submit" name="action" value="join_adbeus">Espress-go!</button>
+                  </div>
+                </div>
+              </form> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
