@@ -1,3 +1,17 @@
+<?php
+  include("connect.inc.php");
+  if(isset($_GET['logout'])){
+    if (ini_get("session.use_cookies")) {
+      $params = session_get_cookie_params();
+      setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+      );
+    }
+    session_destroy();
+    header('Location: landing.php');
+  }
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,59 +20,54 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
 
-    <link type="text/css" rel="stylesheet" href="./css/websys-site.css"/>
+    <link type="text/css" rel="stylesheet" href="css/websys-site.css"/>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body class="brown lighten-5">
-    <div class="navbar-fixed">
-      <nav class="brown darken-2">
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="landing.html" class="brand-logo left"><img src="./images/cc-logo.png"></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="about.html">About</a></li>
-              <li><a href="meetups.html">Meetups</a></li>
-              <li><a href="login.html">Login</a></li>
-              <a class="waves-effect waves-light btn orange darken-4" href="signup.html">Sign Up</a>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+  <?php
+    include('header.php');
+  ?>
 
-      <main>
-        <div class="container">
-          <div class="row">
-            <div class="section">
-              <div class="col s8 offset-s2">
-                <span class="title orange-text text-orange-darken-4"><h2>Welcome back!</h2></span>
-              </div>
-              <div class="col s8 offset-s2">
-                <form method="POST" class="card-panel">
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input placeholder="RPI Email" id="rpi_email" type="text" class="validate">
+    <main>
+      <div><img src="./images/coffeebanner.jpg" width="100%"></div>
+          <div class="container">
+            <div class="row">
+              <div class="section">
+                <div class="row">
+                  <div class="col s12 center-align"><a class="waves-effect waves-light btn-large orange darken-4" href="signup.html">Let's get Coffee!</a></div>
+                  <div class="col s12 m4">
+                    <div class="icon-block">
+                      <h2 class="center orange-text"><i class="material-icons">favorite</i></h2>
+                      <h5 class="center">Make new friends</h5>
+
+                      <p class="light">Placeholder Copy</p>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input placeholder="Password (don't forget!)" id="password" type="text" class="validate">
+
+                  <div class="col s12 m4">
+                    <div class="icon-block">
+                      <h2 class="center orange-text"><i class="material-icons">face</i></h2>
+                      <h5 class="center">Be a part of the community</h5>
+
+                      <p class="light">Placeholder Copy</p>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col s12 center-align">
-                      <button class="waves-effect waves-light btn orange darken-4" type="submit" name="action" value="join_adbeus">Log In</button>
+
+                  <div class="col s12 m4">
+                    <div class="icon-block">
+                      <h2 class="center orange-text"><i class="material-icons">lightbulb_outline</i></h2>
+                      <h5 class="center">Learn new things</h5>
+
+                      <p class="light">Placeholder Copy</p>
                     </div>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
+    </main>
 
     <footer class="page-footer  brown darken-2">
           <div class="container">

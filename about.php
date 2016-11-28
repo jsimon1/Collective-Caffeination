@@ -1,3 +1,6 @@
+<?php
+  include("connect.inc.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,47 +16,71 @@
   </head>
 
   <body class="brown lighten-5">
-    <div class="navbar-fixed">
-      <nav class="brown darken-2">
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="landing.html" class="brand-logo left"><img src="./images/cc-logo.png"></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="about.html">About</a></li>
-              <li><a href="meetups.html">Meetups</a></li>
-              <li><a href="login.html">Login</a></li>
-              <a class="waves-effect waves-light btn orange darken-4" href="signup.html">Sign Up</a>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-
+    <?php
+      include("header.php");
+    ?>
     <main>
       <div class="container">
         <div class="row">
           <div class="section">
-
-              <h3 class="orange-text text-orange-darken-4">Somethings a-brewing!</h3>
-              <p>Check out these upcomging meetups</p>
+              <h4 class="orange-text text-orange-darken-4">What is Collective Caffeination?</h4>
+              <p>PLACEHOLDER ABOUT COPY</p>
               <div class="divider"></div>
+              <h5 class="orange-text text-orange-darken-4">The Websys Team</h5>
               <div class="row">
                 <div class="col s12">
                     <div class="row">
-                      <div class="col s4">
-                        <div class="card horizontal">
+
+                      <div class="col s3">
+                        <div class="card">
                           <div class="card-image">
-                            <img src="./images/gaurav.jpg">
+                            <img class="responsive-img" src="./images/Corey.jpg">
                           </div>
-                          <div class="card-stacked">
+
                             <div class="card-content">
-                              <p>I am a very simple card. I am good at containing small bits of information.</p>
+                              <p>Corey Burns</p>
                             </div>
-                            <div class="card-action center-align">
-                              <a href="#">This is a link</a>
-                            </div>
+
+
+                        </div>
+                      </div>
+                      <div class="col s3">
+                        <div class="card">
+                          <div class="card-image">
+                            <img class="responsive-img" src="./images/Jason.jpg">
                           </div>
+
+                            <div class="card-content">
+                              <p>Jason Kim</p>
+                            </div>
+
+
+                        </div>
+                      </div>
+                      <div class="col s3">
+                        <div class="card">
+                          <div class="card-image">
+                            <img class="responsive-img" width="50" src="./images/Jeremy.jpg">
+                          </div>
+
+                            <div class="card-content">
+                              <p>Jeremy Simon</p>
+                            </div>
+
+
+                        </div>
+                      </div>
+                      <div class="col s3">
+                        <div class="card">
+                          <div class="card-image">
+                            <img class="responsive-img" src="./images/Samm.jpg">
+                          </div>
+
+                            <div class="card-content">
+                              <p>Samm Katcher</p>
+                            </div>
+
+
                         </div>
                       </div>
                     </div>

@@ -1,5 +1,5 @@
 <?php
-
+  include("connect.inc.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,23 +16,9 @@
   </head>
 
   <body class="brown lighten-5">
-    <div class="navbar-fixed">
-      <nav class="brown darken-2">
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="landing.html" class="brand-logo left"><img src="./images/cc-logo.png"></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="about.html">About</a></li>
-              <li><a href="meetups.html">Meetups</a></li>
-              <li><a href="login.html">Login</a></li>
-              <a class="waves-effect waves-light btn orange darken-4" href="signup.html">Sign Up</a>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-
+    <?php
+      include("header.php");
+    ?>
     <main>
       <div class="container">
         <div class="row">
@@ -45,6 +31,32 @@
                 <div class="col s12">
                     <div class="row">
                       <div class="col s4">
+                        <div class="card horizontal">
+                          <div class="card-image">
+                            <img src="./images/gaurav.jpg">
+                          </div>
+                          <div class="card-stacked">
+                            <div class="card-content">
+                              <p>I am a very simple card. I am good at containing small bits of information.</p>
+                            </div>
+                            <div class="card-action center-align">
+                              <a href="#">This is a link</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card horizontal">
+                          <div class="card-image">
+                            <img src="./images/gaurav.jpg">
+                          </div>
+                          <div class="card-stacked">
+                            <div class="card-content">
+                              <p>I am a very simple card. I am good at containing small bits of information.</p>
+                            </div>
+                            <div class="card-action center-align">
+                              <a href="#">This is a link</a>
+                            </div>
+                          </div>
+                        </div>
                         <div class="card horizontal">
                           <div class="card-image">
                             <img src="./images/gaurav.jpg">

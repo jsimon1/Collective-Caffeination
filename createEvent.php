@@ -4,6 +4,7 @@
   if (isset($_GET['success'])){
     //Will go to the page just created
   }
+  $noLink = false;
   if (isset($_GET['create'])){
     extract($_POST);
 
@@ -17,7 +18,7 @@
     $img = $row['profile_img'];
 
     if(strcmp($row['fb_link'],'No link')==0){
-      echo "An event host must enter a valid Facebook link into their profile.";
+      $noLink = true;
     }
     else{
       $sTime = $month.'-'.$day.'-'.$hour1.'-'.$minute1;
@@ -48,21 +49,7 @@
 </head>
 
 <body class="brown lighten-5">
-    <div class="navbar-fixed">
-      <nav class="brown darken-2">
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="landing.html" class="brand-logo left"><img src="./images/cc-logo.png"></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="about.html">About</a></li>
-              <li><a href="meetups.html">Meetups</a></li>
-              <li><a href="login.html">Login</a></li>
-              <a class="waves-effect waves-light btn orange darken-4" href="signup.html">Sign Up</a>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+  <?php include("header.php"); ?>
 
    <main>
       <div class="container">
@@ -70,6 +57,11 @@
           <div class="section">
             <div class="col s8 offset-s2">
               <h2 class = "title orange-text text-orange-darken-4">Create an Event</h2>
+              <?php if($noLink){ ?>
+              <div class="content">
+                <p>Error: An event host must have a valid Facebook link in their profile.</p>
+              </div>
+              <?php } ?>
             </div>
             <div class="col s8 offset-s2">
               <form action="createEvent.php?create" method="post" class="card-panel">

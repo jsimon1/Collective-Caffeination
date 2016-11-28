@@ -37,22 +37,9 @@
   </head>
 
   <body class="brown lighten-5">
-    <div class="navbar-fixed">
-      <nav class="brown darken-2">
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="landing.html" class="brand-logo left"><img src="./images/cc-logo.png"></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="about.html">About</a></li>
-              <li><a href="meetups.html">Meetups</a></li>
-              <li><a href="login.html">Login</a></li>
-              <a class="waves-effect waves-light btn orange darken-4" href="signup.html">Sign Up</a>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-
+    <?php
+      include('header.php');
+    ?>
       <main>
         <div class="container">
           <div class="row">
@@ -69,7 +56,7 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input placeholder="Password" name="password" id="password" type="text" class="validate">
+                      <input placeholder="Password" name="password" id="password" type="password" class="validate">
                     </div>
                   </div>
                   <div class="row">
