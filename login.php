@@ -69,7 +69,7 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input placeholder="Password (don't forget!)" name="password" id="password" type="text" class="validate">
+                      <input placeholder="Password" name="password" id="password" type="text" class="validate">
                     </div>
                   </div>
                   <div class="row">
