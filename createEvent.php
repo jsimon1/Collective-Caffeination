@@ -20,8 +20,9 @@
       echo "An event host must enter a valid Facebook link into their profile.";
     }
     else{
-      $eTime = $month.'-'.$day.'-'.$hour.'-'.$minute;
-      $query2 = "INSERT INTO events (user_id, image, location, start_time) VALUES ('$uid', '$img', '$location', '$eTime')";
+      $sTime = $month.'-'.$day.'-'.$hour1.'-'.$minute1;
+      $etime = $month.'-'.$day.-'-'.$hour2.'-'.$minute2;
+      $query2 = "INSERT INTO events (user_id, image, location, start_time, end_time, description) VALUES ('$uid', '$img', '$location', '$sTime', '$eTime', '$desc')";
       $result = $mysqli->query($query2);
       /*$returnedQuery= $mysqli->query($query);
       if(!$returnedQuery){
@@ -93,12 +94,27 @@
                     <input placeholder="Day" type="number" name = "day" class="validate">
                   </div>
                 </div>
+                Start Time
                 <div class="row">
                   <div class="input-field col s2">
-                    <input placeholder="Hour" type="number" name="day" class="validate">
+                    <input placeholder="Hour" type="number" name="hour1" class="validate">
                   </div>
                   <div class="input-field col s2">
-                    <input placeholder="Minute" type="number" name="day" class="validate">
+                    <input placeholder="Minute" type="number" name="minute1" class="validate">
+                  </div>
+                </div>
+                End Time
+                <div class="row">
+                  <div class="input-field col s2">
+                    <input placeholder="Hour" type="number" name="hour2" class="validate">
+                  </div>
+                  <div class="input-field col s2">
+                    <input placeholder="Minute" type="number" name="minute2" class="validate">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="Description" type="text" name="desc" class="validate">
                   </div>
                 </div>
                 <div class = "row">
