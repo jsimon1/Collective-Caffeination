@@ -84,7 +84,7 @@
                   </div>
                   <div class="row">
                     <div class="file-field input-field col s12">
-                      <div class="btn">
+                      <div class="btn brown darken-1">
                         <span>Upload</span>
                         <input type="file">
                       </div>
