@@ -28,7 +28,7 @@
               <div class="col s10">
                 <h3 class="orange-text text-orange-darken-4">What is Collective Caffeination?</h3>
                 <h4>Collective Caffeination is a web application where people who do not know each other meet at events facilitated by student and faculty hosts.</h4>
-                <h4>Loosely inspired by the concept of <a href="http://www.teawithstrangers.com/">Tea with Strangers</a>, these meetings encourage reaching out, joining new things, and fostering new communities on campus in a safe and accessible environment.</h4>
+                <h4>Loosely inspired by the concept of <a href="http://www.teawithstrangers.com/">Tea with Strangers</a>, these gatherings encourage reaching out, joining new groups, and developing new communities on campus in a safe and accessible environment.</h4>
               </div>
 
               <!-- show everyones picture and how they contributed to project -->
