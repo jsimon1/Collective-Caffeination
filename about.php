@@ -26,7 +26,7 @@
         <div class="row">
           <div class="section">
               <h4 class="orange-text text-orange-darken-4">What is Collective Caffeination?</h4>
-              <p></p>
+              <p>Collective Caffeination is a web application where people who do not know each other meet at events facilitated by student and faculty hosts. Loosely inspired by the concept of “Tea with Strangers,” these meetings encourage reaching out, joining new things, and fostering new communities on campus in a safe and accessible environment.</p>
               <div class="divider"></div>
               <h5 class="orange-text text-orange-darken-4">The Websys Team</h5>
               <!-- show everyones picture and how they contributed to project -->
@@ -126,7 +126,7 @@
           </div>
           <div class="footer-copyright brown darken-4">
             <div class="container">
-              Made with &#9749 by WebSys Group 7
+              Made with &#9749 by WebSys Group 1
             </div>
           </div>
     </footer>
