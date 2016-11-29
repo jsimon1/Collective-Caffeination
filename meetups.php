@@ -32,7 +32,7 @@
                     <div class="row">
 
 
-                          <div class="col s5">
+                          <div class="col s5 offset-s1">
                             <br>
                             <p class="orange-text text-darken-2">Joseph wants coffee!</p>
                             <div class="card horizontal">
@@ -62,7 +62,7 @@
                           </div>
                           </div>
 
-                          <div class="col s5">
+                          <div class="col s5 offset-s1">
                             <br>
                             <p class="orange-text text-darken-2">Joseph wants coffee!</p>
                             <div class="card horizontal">
@@ -92,7 +92,7 @@
                           </div>
                           </div>
 
-                          <div class="col s5">
+                          <div class="col s5 offset-s1">
                             <br>
                             <p class="orange-text text-darken-2">Joseph wants coffee!</p>
                             <div class="card horizontal">
