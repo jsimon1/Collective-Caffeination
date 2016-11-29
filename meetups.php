@@ -52,7 +52,7 @@
                                       <br>
 
                                       <p class="center-align valign">2PM - 3PM</p>
-                                      <h4 class="center-align valign ">NOV 20</h4>
+                                      <p class="center-align valign "><b>NOV 20</b></p>
                                       <p class="center-align valign">Evelyn's Cafe</p>
                                 </div>
                               </div>
@@ -82,7 +82,7 @@
                                       <br>
 
                                       <p class="center-align valign">2PM - 3PM</p>
-                                      <h4 class="center-align valign ">NOV 20</h4>
+                                      <p class="center-align valign "><b>NOV 20</b></p>
                                       <p class="center-align valign">Evelyn's Cafe</p>
                                 </div>
                               </div>
@@ -112,7 +112,7 @@
                                       <br>
 
                                       <p class="center-align valign">2PM - 3PM</p>
-                                      <h4 class="center-align valign ">NOV 20</h4>
+                                      <p class="center-align valign "><b>NOV 20</b></p>
                                       <p class="center-align valign">Evelyn's Cafe</p>
                                 </div>
                               </div>
