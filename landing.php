@@ -37,7 +37,7 @@
             <div class="row">
               <div class="section">
                 <div class="row">
-                  <div class="col s12 center-align"><a class="waves-effect waves-light btn-large orange darken-4" href="signup.html">Let's get Coffee!</a></div>
+                  <div class="col s12 center-align"><a class="waves-effect waves-light btn-large orange darken-4" href="signup.php">Let's get Coffee!</a></div>
                   <div class="col s12 m4">
                     <div class="icon-block">
                       <h2 class="center orange-text"><i class="material-icons">favorite</i></h2>
@@ -75,10 +75,10 @@
             <div class="row">
               <div class="col l6 s12">
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
-                  <li><a class="grey-text text-lighten-3" href="meetups.html">Meetups</a></li>
-                  <li><a class="grey-text text-lighten-3" href="login.html">Log In</a></li>
-                  <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
+                  <li><a class="grey-text text-lighten-3" href="about.php">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="meetups.php">Meetups</a></li>
+                  <li><a class="grey-text text-lighten-3" href="login.php">Log In</a></li>
+                  <li><a class="grey-text text-lighten-3" href="signup.php">Sign Up</a></li>
                   <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
                 </ul>
               </div>

@@ -128,10 +128,10 @@
             <div class="row">
               <div class="col l6 s12">
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
-                  <li><a class="grey-text text-lighten-3" href="meetups.html">Meetups</a></li>
-                  <li><a class="grey-text text-lighten-3" href="login.html">Log In</a></li>
-                  <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
+                  <li><a class="grey-text text-lighten-3" href="about.php">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="meetups.php">Meetups</a></li>
+                  <li><a class="grey-text text-lighten-3" href="login.php">Log In</a></li>
+                  <li><a class="grey-text text-lighten-3" href="signup.php">Sign Up</a></li>
                   <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
                 </ul>
               </div>

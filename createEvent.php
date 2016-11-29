@@ -149,9 +149,9 @@
                   <!-- takes user to meetup page -->
                   <li><a class="grey-text text-lighten-3" href="meetups.php">Meetups</a></li>
                   <!-- takes user to login page -->
-                  <li><a class="grey-text text-lighten-3" href="login.html">Log In</a></li>
+                  <li><a class="grey-text text-lighten-3" href="login.php">Log In</a></li>
                   <!-- takes user to sign up page -->
-                  <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
+                  <li><a class="grey-text text-lighten-3" href="signup.php">Sign Up</a></li>
                   <!-- takes user to our github repo -->
                   <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
                 </ul>
