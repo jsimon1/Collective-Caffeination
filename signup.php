@@ -1,4 +1,6 @@
 <?php
+  ini_set('display_errors',1);
+  error_reporting(E_ALL);
   include("connect.inc.php");
   if (isset($_GET['new'])){
     extract($_POST);
@@ -14,6 +16,18 @@
       $lName = $last_name;
       $fName = addslashes($fName);
       $lName = addslashes($lName);
+      $fb = $fb_link;
+
+      //Storing image on the server - code from http://stackoverflow.com/questions/3509333/how-to-upload-save-files-with-desired-name
+      
+      $target = "";
+      $dir = $_SERVER['DOCUMENT_ROOT'].'/websys/WebSys-Website';
+      if(count($_FILES)>0){
+        $target = $dir.'/images/'.addslashes($_FILES['profilepic']['name']);
+        move_uploaded_file($_FILES['profilepic']['tmp_name'], $target);
+      }
+    
+
       //Email Validator
       if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $allowedChars ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789./';
@@ -24,7 +38,7 @@
             $salt .= $allowedChars[mt_rand(0,$charsLen)];
         }
         $hashedPassword = crypt($pwd, $salt);
-        $query = "INSERT INTO users (email, password, first_name, last_name, salt, fb_link, profile_img) VALUES ('$email', '$hashedPassword', '$fName', '$lName', '$salt', 'No link', 'No link')";
+        $query = "INSERT INTO users (email, password, first_name, last_name, salt, fb_link, profile_img) VALUES ('$email', '$hashedPassword', '$fName', '$lName', '$salt', '$fb', '$target')";
         $returnedQuery= $mysqli->query($query);
         if(!$returnedQuery){
           $mysqli->error;
@@ -35,8 +49,8 @@
           $_SESSION['email']=$rpi_email;
           $_SESSION['fName']=$first_name;
           $_SESSION['lName']=$last_name;
-          header('Location: meetups.php');
-          exit;
+          //header('Location: meetups.php');
+          //exit;
         }
       }
       else{
@@ -73,7 +87,7 @@
                 </div>
               </div>
               <div class="col s8 offset-s2">
-                <form action="signup.php?new" method="post" class="card-panel">
+                <form action="signup.php?new" method="post" class="card-panel" enctype="multipart/form-data">
                   <div class="row">
                     <div class="input-field col s6">
                       <input placeholder="First Name" name="first_name" id="first_name" type="text" class="validate">
@@ -86,7 +100,7 @@
                     <div class="file-field input-field col s12">
                       <div class="btn brown darken-1">
                         <span>File</span>
-                        <input type="file">
+                        <input type="file" name="profilepic" id="profilepic">
                       </div>
                       <div class="file-path-wrapper">
                         <input placeholder="Upload a picture of yourself" name="profpic" id="profpic" class="file-path validate" type="text">
@@ -105,7 +119,7 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input placeholder="Password (dont forget!)" name="password" id="password" type="password" class="validate">
+                      <input placeholder="Password (don't forget!)" name="password" id="password" type="password" class="validate">
                     </div>
                   </div>
                   <div class="row">
@@ -128,10 +142,10 @@
             <div class="row">
               <div class="col l6 s12">
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="about.php">About</a></li>
-                  <li><a class="grey-text text-lighten-3" href="meetups.php">Meetups</a></li>
-                  <li><a class="grey-text text-lighten-3" href="login.php">Log In</a></li>
-                  <li><a class="grey-text text-lighten-3" href="signup.php">Sign Up</a></li>
+                  <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="meetups.html">Meetups</a></li>
+                  <li><a class="grey-text text-lighten-3" href="login.html">Log In</a></li>
+                  <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
                   <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
                 </ul>
               </div>

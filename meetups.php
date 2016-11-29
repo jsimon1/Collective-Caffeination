@@ -24,28 +24,34 @@
         <div class="row">
           <div class="section">
 
-              <h3 class="orange-text text-orange-darken-4">Somethings a-brewing!</h3>
-              <p>Check out these upcomging meetups</p>
+              <h3 class="orange-text text-orange-darken-4">Somethings a-brewing</h3>
+              <p>Check out these upcoming meetups</p>
               <div class="divider"></div>
               <div class="row">
                 <div class="col s12">
                     <div class="row">
 
-                      <div class="col s4">
+                      <div class="col s5">
                         <div class="card horizontal">
                           <div class="card-image">
                             <img src="./images/gaurav.jpg">
                           </div>
                           <div class="card-stacked">
                             <div class="card-content">
-                              <p class="center-align">Joseph is hosting!</p>
+                              <p class="center-align orange-text text-darken-2">Joseph wants coffee!</p>
+                              <div class="divider"></div>
+                              <h3 class="center-align">NOV 20</h3>
+                              <h4 class="center-align">2PM - 3PM</h4>
+                              <p class="center-align">Evelyn's Cafe</p>
 
                             </div>
-                            <div class="card-action center-align">
-                              <a href="#">JOIN</a>
-                            </div>
+
                           </div>
+
                         </div>
+                      <div  class="center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">JOIN</button>
+                      </div>
                       </div>
 
                     </div>
