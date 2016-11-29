@@ -30,6 +30,7 @@
               <div class="row">
                 <div class="col s12">
                     <div class="row">
+
                       <div class="col s4">
                         <div class="card horizontal">
                           <div class="card-image">
@@ -37,44 +38,16 @@
                           </div>
                           <div class="card-stacked">
                             <div class="card-content">
-                              <p>I am a very simple card. I am good at containing small bits of information.</p>
+                              <p class="center-align">Joseph is hosting!</p>
+
                             </div>
                             <div class="card-action center-align">
-                              <a href="#">This is a link</a>
+                              <a href="#">JOIN</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col s4">
-                        <div class="card horizontal">
-                          <div class="card-image">
-                            <img src="./images/gaurav.jpg">
-                          </div>
-                          <div class="card-stacked">
-                            <div class="card-content">
-                              <p>I am a very simple card. I am good at containing small bits of information.</p>
-                            </div>
-                            <div class="card-action center-align">
-                              <a href="#">This is a link</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col s4">
-                        <div class="card horizontal">
-                          <div class="card-image">
-                            <img src="./images/gaurav.jpg">
-                          </div>
-                          <div class="card-stacked">
-                            <div class="card-content">
-                              <p>I am a very simple card. I am good at containing small bits of information.</p>
-                            </div>
-                            <div class="card-action center-align">
-                              <a href="#">This is a link</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+
                     </div>
                 </div>
               </div>
