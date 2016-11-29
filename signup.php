@@ -19,14 +19,14 @@
       $fb = $fb_link;
 
       //Storing image on the server - code from http://stackoverflow.com/questions/3509333/how-to-upload-save-files-with-desired-name
-      
+
       $target = "";
       $dir = $_SERVER['DOCUMENT_ROOT'].'/websys/WebSys-Website';
       if(count($_FILES)>0){
         $target = $dir.'/images/'.addslashes($_FILES['profilepic']['name']);
         move_uploaded_file($_FILES['profilepic']['tmp_name'], $target);
       }
-    
+
 
       //Email Validator
       if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -150,13 +150,15 @@
                 </ul>
               </div>
               <div class="col l6 s12">
-                <p class="grey-text text-lighten-4">Collective Caffeination is all about joining together. Something something Samm please put something in here.</p>
+                <p class="grey-text text-lighten-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At our first group project meeting, nearly all of us came with some form of caffeinated beverage in hand, so creating a web application that makes it easier for students to meet over a cup of coffee seemed like something that many RPI students would enjoy and could relate to.</br>
+                </br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We knew we wanted to make something to help students at RPI who would not ordinarily meet, get a chance to go outside of their comfort zone and make friends on campus.</p>
               </div>
             </div>
           </div>
           <div class="footer-copyright brown darken-4">
             <div class="container">
-              Made with &#9749 by WebSys Group 7
+              Made with &#9749 by WebSys Group 1
             </div>
           </div>
     </footer>
