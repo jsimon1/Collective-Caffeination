@@ -37,7 +37,7 @@
 <!doctype html>
 <!-- in this HTML we allow the users to create an event for them to host -->
 <head>
-  <title>Create an Event</title>
+  <title>Host an event</title>
   <head>
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -58,7 +58,7 @@
         <div class="row">
           <div class="section">
             <div class="col s8 offset-s2">
-              <h2 class = "title orange-text text-orange-darken-4">Create an Event</h2>
+              <h2 class = "title orange-text text-orange-darken-4">Host an event :)</h2>
               <?php if($noLink){ ?>
               <div class="content">
                 <p>Error: An event host must have a valid Facebook link in their profile.</p>
