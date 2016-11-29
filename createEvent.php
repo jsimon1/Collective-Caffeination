@@ -7,6 +7,7 @@
   $noLink = false;
   if (isset($_GET['create'])){
     extract($_POST);
+    
     // goes to email from our database and fetches it
     $uemail = $_SESSION['email'];
     $query = "SELECT * FROM users WHERE email = '$uemail'";
@@ -16,15 +17,64 @@
     $location = $loc;
     $uid = $row['id'];
     $img = $row['profile_img'];
+
+    //String manipulation to break up the date into an easy-to-interpret variable
+    $firstSpace = strpos($uDate, ' ');
+    $day = substr($uDate, 0,$firstSpace);
+    $pos = strpos($uDate, ',');
+    $month = substr($uDate,$firstSpace+1,$pos-$firstSpace-1);
+
+    $monthNum=0;
+    if(strcmp($month,'January')==0){
+      $monthNum=1;
+    }
+    else if(strcmp($month,'February')==0){
+      $monthNum=2;
+    }
+    else if(strcmp($month,'March')==0){
+      $monthNum=3;
+    }
+    else if(strcmp($month,'April')==0){
+      $monthNum=4;
+    }
+    else if(strcmp($month,'May')==0){
+      $monthNum=5;
+    }
+    else if(strcmp($month,'June')==0){
+      $monthNum=6;
+    }
+    else if(strcmp($month,'July')==0){
+      $monthNum=7;
+    }
+    else if(strcmp($month,'August')==0){
+      $monthNum=8;
+    }
+    else if(strcmp($month,'September')==0){
+      $monthNum=9;
+    }
+    else if(strcmp($month,'October')==0){
+      $monthNum=10;
+    }
+    else if(strcmp($month,'November')==0){
+      $monthNum=11;
+    }
+    else if(strcmp($month,'December')==0){
+      $monthNum=12;
+    }
+    //echo $monthNum;
+    $year = substr($uDate,$pos+1);
+
+    $finalDate = $year.'-'.$monthNum.'-'.$day;
+
     // Ensures the user has a facebook and echos an error if theirs is not valid
     if(strcmp($row['fb_link'],'No link')==0){
       $noLink = true;
     }
     else{
       // inserts the time entered in the database where we hold the meeting times
-      $sTime = $month.'-'.$day.'-'.$hour1.'-'.$minute1;
-      $etime = $month.'-'.$day.-'-'.$hour2.'-'.$minute2;
-      $query2 = "INSERT INTO events (user_id, image, location, start_time, end_time, description) VALUES ('$uid', '$img', '$location', '$sTime', '$eTime', '$desc')";
+      $startingTime = $hour1.' '.$startT;
+      $endingTime = $hour2.' '.$endT;
+      $query2 = "INSERT INTO events (user_id, image, location, start_time, end_time, description, date) VALUES ('$uid', '$img', '$location', '$startingTime', '$endingTime', '$desc', '$finalDate')";
       $result = $mysqli->query($query2);
       /*$returnedQuery= $mysqli->query($query);
       if(!$returnedQuery){
@@ -85,11 +135,11 @@
                 <div class="row">
                   <div class="input-field col s12">
                     <!-- user now is allowed to pick a date they want to meet -->
-                    <input type="date" class="datepicker">
+                    <input type="date" name="uDate" id="uDate"class="datepicker">
                     <label>Pick a date</label>
                   </div>
                 </div>
-                <!-- input for the time to meet -->
+                <!-- input for the time to meet - Keeping for now for Firefox implementation
                 <div class="row">
                   <div class="input-field col s6">
                     <input placeholder="Month" type="number" name = "month" class = "validate">
@@ -97,7 +147,7 @@
                   <div class="input-field col s6">
                     <input placeholder="Day" type="number" name = "day" class="validate">
                   </div>
-                </div>
+                </div>-->
 
                 <!-- allows users to pick a start time -->
                 <div class="row">
@@ -106,7 +156,10 @@
                     <label>Start time</label>
                   </div>
                   <div class="input-field col s6">
-                    <input placeholder="Minute" type="number" name="minute1" class="validate">
+                    <select name="startT">
+                      <option value="AM" selected>AM</option>
+                      <option value="PM">PM</option>
+                    </select>
                   </div>
                 </div>
                 <!-- allows user to pick end time-->
@@ -116,7 +169,10 @@
                     <label>End time</label>
                   </div>
                   <div class="input-field col s6">
-                    <input placeholder="Minute" type="number" name="minute2" class="validate">
+                    <select name="endT">
+                      <option value="AM" selected>AM</option>
+                      <option value="PM">PM</option>
+                    </select>
                   </div>
                 </div>
                 <!-- allows user to add some comments about the meeting -->
@@ -149,9 +205,9 @@
                   <!-- takes user to meetup page -->
                   <li><a class="grey-text text-lighten-3" href="meetups.php">Meetups</a></li>
                   <!-- takes user to login page -->
-                  <li><a class="grey-text text-lighten-3" href="login.php">Log In</a></li>
+                  <li><a class="grey-text text-lighten-3" href="login.html">Log In</a></li>
                   <!-- takes user to sign up page -->
-                  <li><a class="grey-text text-lighten-3" href="signup.php">Sign Up</a></li>
+                  <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
                   <!-- takes user to our github repo -->
                   <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
                 </ul>
