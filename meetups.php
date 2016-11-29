@@ -44,6 +44,8 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div class="col s4">
                         <div class="card horizontal">
                           <div class="card-image">
                             <img src="./images/gaurav.jpg">
@@ -57,6 +59,8 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div class="col s4">
                         <div class="card horizontal">
                           <div class="card-image">
                             <img src="./images/gaurav.jpg">
