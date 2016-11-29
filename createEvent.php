@@ -7,7 +7,7 @@
   $noLink = false;
   if (isset($_GET['create'])){
     extract($_POST);
-    
+
     // goes to email from our database and fetches it
     $uemail = $_SESSION['email'];
     $query = "SELECT * FROM users WHERE email = '$uemail'";
@@ -205,15 +205,17 @@
                   <!-- takes user to meetup page -->
                   <li><a class="grey-text text-lighten-3" href="meetups.php">Meetups</a></li>
                   <!-- takes user to login page -->
-                  <li><a class="grey-text text-lighten-3" href="login.html">Log In</a></li>
+                  <li><a class="grey-text text-lighten-3" href="login.php">Log In</a></li>
                   <!-- takes user to sign up page -->
-                  <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
+                  <li><a class="grey-text text-lighten-3" href="signup.php">Sign Up</a></li>
                   <!-- takes user to our github repo -->
                   <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
                 </ul>
               </div>
               <div class="col l6 s12">
-                <p class="grey-text text-lighten-4">Collective Caffeination is all about joining together. Something something Samm please put something in here.</p>
+                <p class="grey-text text-lighten-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At our first group project meeting, nearly all of us came with some form of caffeinated beverage in hand, so creating a web application that makes it easier for students to meet over a cup of coffee seemed like something that many RPI students would enjoy and could relate to.</br>
+                </br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We knew we wanted to make something to help students at RPI who would not ordinarily meet, get a chance to go outside of their comfort zone and make friends on campus.</p>
               </div>
             </div>
           </div>
