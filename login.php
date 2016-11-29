@@ -2,14 +2,17 @@
   include("connect.inc.php");
   if (isset($_GET['login'])){
     extract($_POST);
+    // accesses the database
     $query = "SELECT * FROM users WHERE email = '$rpi_email'";
     //echo $query;
     $result = $mysqli->query($query);
     $row = $result->fetch_assoc();
     $salt = $row['salt'];
+    // checks the password
     $checkPwd = crypt($password,$salt);
     if ($checkPwd == $row['password']){
       $success = true;
+      // starts the session
       session_start();
       $_SESSION['email']=$row['email'];
       $_SESSION['fName']=$row['first_name'];
@@ -18,6 +21,7 @@
       exit;
     }
     else{
+      // throw and error with false
       $success = false;
     }
   }
@@ -77,10 +81,15 @@
             <div class="row">
               <div class="col l6 s12">
                 <ul>
+                  <!-- link to about page -->
                   <li><a class="grey-text text-lighten-3" href="about.php">About</a></li>
+                  <!-- link to meetup page -->
                   <li><a class="grey-text text-lighten-3" href="meetups.php">Meetups</a></li>
+                  <!-- link to log in page -->
                   <li><a class="grey-text text-lighten-3" href="login.html">Log In</a></li>
+                  <!-- link to sign up page -->
                   <li><a class="grey-text text-lighten-3" href="signup.html">Sign Up</a></li>
+                  <!-- link to our github repo -->
                   <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
                 </ul>
               </div>
