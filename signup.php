@@ -117,7 +117,7 @@
 
                 </form>
               </div>
-              <div class="col s12 center align"><br><a class="orange-text text-darken-4" href="login.html">Already have an account? Click here to login.</a></div>
+              <div class="col s12 center align"><br><a class="orange-text text-darken-4" href="login.php">Already have an account? Click here to login.</a></div>
             </div>
           </div>
         </div>

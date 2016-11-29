@@ -67,7 +67,7 @@
                 </form>
               </div>
             </div>
-            <div class="col s12 center align"><br><a class="orange-text text-darken-4" href="login.html">Don't have an account? Click here to Sign up!</a></div>
+            <div class="col s12 center align"><br><a class="orange-text text-darken-4" href="signup.php">Don't have an account? Click here to Sign up!</a></div>
           </div>
         </div>
       </main>
