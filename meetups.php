@@ -31,28 +31,99 @@
                 <div class="col s12">
                     <div class="row">
 
-                      <div class="col s5">
-                        <div class="card horizontal">
-                          <div class="card-image">
-                            <img src="./images/gaurav.jpg">
-                          </div>
-                          <div class="card-stacked">
-                            <div class="card-content">
-                              <p class="center-align orange-text text-darken-2">Joseph wants coffee!</p>
-                              <div class="divider"></div>
-                              <h3 class="center-align">NOV 20</h3>
-                              <h4 class="center-align">2PM - 3PM</h4>
-                              <p class="center-align">Evelyn's Cafe</p>
 
+                          <div class="col s5">
+                            <br>
+                            <p class="orange-text text-darken-2">Joseph wants coffee!</p>
+                            <div class="card horizontal">
+                              <div class="card-image">
+                                <a href="http://www.facebook.com"><img src="./images/gaurav.jpg" class="circle responsive-imgs"></a>
+
+
+                              </div>
+                              <div class="card-stacked">
+                                <div class="card-content">
+
+
+
+                                  <p class="center-align grey-text">3 spots left</p>
+                                  <br>
+                                  <div class="divider"></div>
+                                      <br>
+
+                                      <p class="center-align valign">2PM - 3PM</p>
+                                      <h4 class="center-align valign ">NOV 20</h4>
+                                      <p class="center-align valign">Evelyn's Cafe</p>
+                                </div>
+                              </div>
                             </div>
-
+                          <div  class="center-align">
+                            <button class="btn waves-effect waves-light orange darken-4" type="submit" name="action">JOIN</button>
+                          </div>
                           </div>
 
-                        </div>
-                      <div  class="center-align">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">JOIN</button>
-                      </div>
-                      </div>
+                          <div class="col s5">
+                            <br>
+                            <p class="orange-text text-darken-2">Joseph wants coffee!</p>
+                            <div class="card horizontal">
+                              <div class="card-image">
+                                <a href="http://www.facebook.com"><img src="./images/gaurav.jpg" class="circle responsive-imgs"></a>
+
+
+                              </div>
+                              <div class="card-stacked">
+                                <div class="card-content">
+
+
+
+                                  <p class="center-align grey-text">3 spots left</p>
+                                  <br>
+                                  <div class="divider"></div>
+                                      <br>
+
+                                      <p class="center-align valign">2PM - 3PM</p>
+                                      <h4 class="center-align valign ">NOV 20</h4>
+                                      <p class="center-align valign">Evelyn's Cafe</p>
+                                </div>
+                              </div>
+                            </div>
+                          <div  class="center-align">
+                            <button class="btn waves-effect waves-light orange darken-4" type="submit" name="action">JOIN</button>
+                          </div>
+                          </div>
+
+                          <div class="col s5">
+                            <br>
+                            <p class="orange-text text-darken-2">Joseph wants coffee!</p>
+                            <div class="card horizontal">
+                              <div class="card-image">
+                                <a href="http://www.facebook.com"><img src="./images/gaurav.jpg" class="circle responsive-imgs"></a>
+
+
+                              </div>
+                              <div class="card-stacked">
+                                <div class="card-content">
+
+
+
+                                  <p class="center-align grey-text">3 spots left</p>
+                                  <br>
+                                  <div class="divider"></div>
+                                      <br>
+
+                                      <p class="center-align valign">2PM - 3PM</p>
+                                      <h4 class="center-align valign ">NOV 20</h4>
+                                      <p class="center-align valign">Evelyn's Cafe</p>
+                                </div>
+                              </div>
+                            </div>
+                          <div  class="center-align">
+                            <button class="btn waves-effect waves-light orange darken-4" type="submit" name="action">JOIN</button>
+                          </div>
+                          </div>
+
+
+
 
                     </div>
                 </div>
