@@ -83,6 +83,22 @@
                     </div>
                   </div>
                   <div class="row">
+                    <div class="file-field input-field col s12">
+                      <div class="btn">
+                        <span>Upload</span>
+                        <input type="file">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input placeholder="Upload a picture of yourself" name="profpic" id="profpic" class="file-path validate" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="Your Facebook" name="fb_link" id="fb_link" type="text" class="validate">
+                    </div>
+                  </div>
+                  <div class="row">
                     <div class="input-field col s12">
                       <input placeholder="RPI Email" name="rpi_email" id="rpi_email" type="text" class="validate">
                     </div>
@@ -97,6 +113,8 @@
                       <button class="waves-effect waves-light btn orange darken-4" type="submit" name="action" value="join_adbeus">Espress-go!</button>
                     </div>
                   </div>
+
+
                 </form>
               </div>
               <div class="col s12 center align"><br><a class="orange-text text-darken-4" href="login.html">Already have an account? Click here to login.</a></div>
