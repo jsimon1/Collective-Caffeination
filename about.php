@@ -42,10 +42,10 @@
                           </div>
 
                             <div class="card-content">
-                              <p>Corey Burns</p>
+                              <p class="center-align">Corey Burns</p>
+                              <p></br>Corey is a sophomore ITWS student who also plays lacrosse. He likes to play video games and go on hikes with his friends.</br></br><p/>
                             </div>
-
-
+                            
                         </div>
                       </div>
                       <div class="col s3">
@@ -56,8 +56,10 @@
                           </div>
 
                             <div class="card-content">
-                              <p>Jason Kim</p>
+                              <p class="center-align">Jason Kim</p>
+                              <p></br>Jason is an EMAC senior with a minor in ITWS. Jason is a member of the Photography Club, Red Bull enthusiast, and frequent coffee drinker.</p>
                             </div>
+                            
 
 
                         </div>
@@ -70,8 +72,10 @@
                           </div>
 
                             <div class="card-content">
-                              <p>Jeremy Simon</p>
+                              <p class="center-align">Jeremy Simon</p>
+                              <p><br/>Jeremy is a sophomore ITWS and CS dual who loves back-end coding in PHP and SQL. In his spare time, he enjoys playing guitar and video games.</br></br></p>
                             </div>
+                            
 
 
                         </div>
@@ -84,8 +88,10 @@
                           </div>
 
                             <div class="card-content">
-                              <p>Samm Katcher</p>
+                              <p class="center-align">Samm Katcher</p>
+                              <p></br>Samm is a sophomore ITWS student with an affinity for fuzzy socks and warm beverages. In her spare time, she is in the Ballroom Dance Club and the IT Leadership Board.</br></p>
                             </div>
+                            
 
 
                         </div>
