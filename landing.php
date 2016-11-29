@@ -43,7 +43,7 @@
                       <h2 class="center orange-text"><i class="material-icons">favorite</i></h2>
                       <h5 class="center">Make new friends</h5>
 
-                      <p class="light">Placeholder Copy</p>
+                      <p class="light">Connect with like-minded members of the RPI community over a cup of coffee</p>
                     </div>
                   </div>
 
@@ -52,7 +52,7 @@
                       <h2 class="center orange-text"><i class="material-icons">face</i></h2>
                       <h5 class="center">Be a part of the community</h5>
 
-                      <p class="light">Placeholder Copy</p>
+                      <p class="light">Engage with the RPI community in a unique and out-of-classroom experience</p>
                     </div>
                   </div>
 
@@ -61,7 +61,7 @@
                       <h2 class="center orange-text"><i class="material-icons">lightbulb_outline</i></h2>
                       <h5 class="center">Learn new things</h5>
 
-                      <p class="light">Placeholder Copy</p>
+                      <p class="light">Share interesting thoughts and ideas to and inspire others with your insight</p>
                     </div>
                   </div>
                 </div>
