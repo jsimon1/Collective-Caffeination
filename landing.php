@@ -19,7 +19,7 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-
+    <!-- imports websys-site.css -->
     <link type="text/css" rel="stylesheet" href="css/websys-site.css"/>
 
     <!--Let browser know website is optimized for mobile-->
@@ -31,6 +31,7 @@
   ?>
 
     <main>
+      <!-- loads ladning page image -->
       <div><img src="./images/coffeebanner.jpg" width="100%"></div>
           <div class="container">
             <div class="row">
@@ -88,7 +89,7 @@
           </div>
           <div class="footer-copyright brown darken-4">
             <div class="container">
-              Made with &#9749 by WebSys Group 7
+              Made with &#9749 by WebSys Group 1
             </div>
           </div>
     </footer>
