@@ -176,6 +176,19 @@
                     </select>
                   </div>
                 </div>
+                <!-- Add max number of participants-->
+                <div class="row">
+                  <div class="input-field col s12">
+                    <select name="capacity">
+                      <option value="0" disabled selected>How many people at your meetup?</option>
+                      <option value="1">3 People</option>
+                      <option value="2">4 People</option>
+                      <option value="3">5 People</option>
+                      <option value="4">6 People</option>
+                    </select>
+                    <label>Max capacity</label>
+                  </div>
+                </div>
                 <!-- allows user to add some comments about the meeting -->
                 <div class="row">
                   <div class="input-field col s12">
