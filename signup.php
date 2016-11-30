@@ -55,10 +55,16 @@
           echo $query;
         }
         else{
+          //Getting id for session handling
+          $query1 = "SELECT * FROM users WHERE email = '$email'";
+          $result1 = $mysqli->query($query1);
+          $row1 = $result1->fetch_assoc();
+
           session_start();
           $_SESSION['email']=$rpi_email;
           $_SESSION['fName']=$first_name;
           $_SESSION['lName']=$last_name;
+          $_SESSION['uid']=$row1['id'];
           header('Location: meetups.php');
           exit;
         }

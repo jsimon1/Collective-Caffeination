@@ -128,7 +128,7 @@
                       <option value="3">Sage - The Beanery Cafe</option>
                       <option value="4">Pittsburgh - The Lally Gally</option>
                       <option value="5">Folsom Library - The Library Cafe</option>
-                      <option value="6">EMPAC - Evelyn's</option>
+                      <option value="6">EMPAC - Evelyn's Cafe</option>
                     </select>
                   </div>
                 </div>

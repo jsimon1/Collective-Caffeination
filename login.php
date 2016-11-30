@@ -17,6 +17,7 @@
       $_SESSION['email']=$row['email'];
       $_SESSION['fName']=$row['first_name'];
       $_SESSION['lName']=$row['last_name'];
+      $_SESSION['uid']=$row['id'];
       header('Location: meetups.php');
       exit;
     }
