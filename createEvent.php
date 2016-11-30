@@ -23,6 +23,7 @@
     $day = substr($uDate, 0,$firstSpace);
     $pos = strpos($uDate, ',');
     $month = substr($uDate,$firstSpace+1,$pos-$firstSpace-1);
+    $desc = addslashes($desc);
 
     $monthNum=0;
     if(strcmp($month,'January')==0){
@@ -77,11 +78,7 @@
       $query2 = "INSERT INTO events (user_id, image, location, start_time, end_time, description, date) VALUES ('$uid', '$img', '$location', '$startingTime', '$endingTime', '$desc', '$finalDate')";
       $result = $mysqli->query($query2);
       header('Location: meetups.php?new');
-      /*$returnedQuery= $mysqli->query($query);
-      if(!$returnedQuery){
-        $mysqli->error;
-        echo $query;
-      }*/
+      //echo $query2;
     }
   }
 ?>
@@ -209,36 +206,9 @@
       </div>
     </main>
 
-    <footer class="page-footer  brown darken-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <ul>
-                  <!-- takes user to about page -->
-                  <li><a class="grey-text text-lighten-3" href="about.php">About</a></li>
-                  <!-- takes user to meetup page -->
-                  <li><a class="grey-text text-lighten-3" href="meetups.php">Meetups</a></li>
-                  <!-- takes user to login page -->
-                  <li><a class="grey-text text-lighten-3" href="login.php">Log In</a></li>
-                  <!-- takes user to sign up page -->
-                  <li><a class="grey-text text-lighten-3" href="signup.php">Sign Up</a></li>
-                  <!-- takes user to our github repo -->
-                  <li><a class="grey-text text-lighten-3" href="https://github.com/miknosaj/WebSys-Website">GitHub</a></li>
-                </ul>
-              </div>
-              <div class="col l6 s12">
-                <p class="grey-text text-lighten-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At our first group project meeting, nearly all of us came with some form of caffeinated beverage in hand, so creating a web application that makes it easier for students to meet over a cup of coffee seemed like something that many RPI students would enjoy and could relate to.</br>
-                </br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We knew we wanted to make something to help students at RPI who would not ordinarily meet, get a chance to go outside of their comfort zone and make friends on campus.</p>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright brown darken-4">
-            <div class="container">
-              Made with &#9749 by WebSys Group 7
-            </div>
-          </div>
-    </footer>
+    <?php
+      include("footer.php");
+    ?>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
