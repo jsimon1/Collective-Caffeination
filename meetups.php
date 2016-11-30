@@ -23,105 +23,53 @@
       <div class="container">
         <div class="row">
           <div class="section">
-
+              <?php if (isset($_GET['new'])){ ?>
+                <p>Your event was created successfully!</p>
+              <?php } ?>
               <h3 class="orange-text text-orange-darken-4">Somethings a-brewing</h3>
               <p>Check out these upcoming meetups</p>
               <div class="divider"></div>
               <div class="row">
                 <div class="col s12">
                     <div class="row">
-
-
-                          <div class="col s5 offset-s1">
-                            <br>
-                            <p class="orange-text text-darken-2">Joseph wants coffee!</p>
-                            <div class="card horizontal">
-                              <div class="card-image">
-                                <a href="http://www.facebook.com"><img src="./images/gaurav.jpg" class="circle responsive-imgs"></a>
-
-
-                              </div>
-                              <div class="card-stacked">
-                                <div class="card-content">
-
-
-
-                                  <p class="center-align grey-text">3 spots left</p>
+                      <?php
+                        $usersArr = array();
+                        $facebookArr = array();
+                        $query = "SELECT * FROM `users`";
+                        $result = $mysqli->query($query);
+                        while($row = $result->fetch_assoc()) {
+                          $usersArr[$row['id']] = $row['first_name'];
+                          $facebookArr[$row['id']] = $row['fb_link'];
+                        }
+                        $query1 = "SELECT * FROM `events` ORDER BY `date`";
+                        $result1 = $mysqli->query($query1);
+                        while($row1 = $result1->fetch_assoc()) {
+                      ?>
+                      <!-- Start card -->
+                      <div class="col s5 offset-s1">
+                        <p class="orange-text text-darken-2"><?php echo $usersArr[$row1['user_id']]; ?> wants coffee!</p>
+                        <div class="card horizontal">
+                          <div class="card-image">
+                            <a href="<?php echo $facebookArr[$row1['user_id']]; ?>"><?php echo "<img src=$row1['image']>";?> class="circle responsive-imgs"></a>
+                          </div>
+                          <div class="card-stacked">
+                            <div class="card-content">
+                              <p class="center-align grey-text">3 spots left</p>
+                              <br>
+                              <div class="divider"></div>
                                   <br>
-                                  <div class="divider"></div>
-                                      <br>
-
-                                      <p class="center-align valign">2PM - 3PM</p>
-                                      <p class="center-align valign "><b>NOV 20</b></p>
-                                      <p class="center-align valign">Evelyn's Cafe</p>
-                                </div>
-                              </div>
+                                  <p class="center-align valign">2PM - 3PM</p>
+                                  <p class="center-align valign "><b>NOV 20</b></p>
+                                  <p class="center-align valign">Evelyn's Cafe</p>
                             </div>
-                          <div  class="center-align">
-                            <button class="btn waves-effect waves-light orange darken-4" type="submit" name="action">JOIN</button>
                           </div>
-                          </div>
-
-                          <div class="col s5 offset-s1">
-                            <br>
-                            <p class="orange-text text-darken-2">Joseph wants coffee!</p>
-                            <div class="card horizontal">
-                              <div class="card-image">
-                                <a href="http://www.facebook.com"><img src="./images/gaurav.jpg" class="circle responsive-imgs"></a>
-
-
-                              </div>
-                              <div class="card-stacked">
-                                <div class="card-content">
-
-
-
-                                  <p class="center-align grey-text">3 spots left</p>
-                                  <br>
-                                  <div class="divider"></div>
-                                      <br>
-
-                                      <p class="center-align valign">2PM - 3PM</p>
-                                      <p class="center-align valign "><b>NOV 20</b></p>
-                                      <p class="center-align valign">Evelyn's Cafe</p>
-                                </div>
-                              </div>
-                            </div>
-                          <div  class="center-align">
-                            <button class="btn waves-effect waves-light orange darken-4" type="submit" name="action">JOIN</button>
-                          </div>
-                          </div>
-
-                          <div class="col s5 offset-s1">
-                            <br>
-                            <p class="orange-text text-darken-2">Joseph wants coffee!</p>
-                            <div class="card horizontal">
-                              <div class="card-image">
-                                <a href="http://www.facebook.com"><img src="./images/gaurav.jpg" class="circle responsive-imgs"></a>
-
-
-                              </div>
-                              <div class="card-stacked">
-                                <div class="card-content">
-
-
-
-                                  <p class="center-align grey-text">3 spots left</p>
-                                  <br>
-                                  <div class="divider"></div>
-                                      <br>
-
-                                      <p class="center-align valign">2PM - 3PM</p>
-                                      <p class="center-align valign "><b>NOV 20</b></p>
-                                      <p class="center-align valign">Evelyn's Cafe</p>
-                                </div>
-                              </div>
-                            </div>
-                          <div  class="center-align">
-                            <button class="btn waves-effect waves-light orange darken-4" type="submit" name="action">JOIN</button>
-                          </div>
-                          </div>
-
+                        </div>
+                      <div  class="center-align">
+                        <button class="btn waves-effect waves-light orange darken-4" type="submit" name="action">JOIN</button>
+                      </div>
+                      </div>
+                      <!-- End card -->
+                      <?php } ?>
                     </div>
                 </div>
               </div>

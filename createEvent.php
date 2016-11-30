@@ -76,6 +76,7 @@
       $endingTime = $hour2.' '.$endT;
       $query2 = "INSERT INTO events (user_id, image, location, start_time, end_time, description, date) VALUES ('$uid', '$img', '$location', '$startingTime', '$endingTime', '$desc', '$finalDate')";
       $result = $mysqli->query($query2);
+      header('Location: meetups.php?new');
       /*$returnedQuery= $mysqli->query($query);
       if(!$returnedQuery){
         $mysqli->error;

@@ -1,13 +1,23 @@
 <?php
-  ini_set('display_errors',1);
-  error_reporting(E_ALL);
   include("connect.inc.php");
+
+  //Coming to this page automatically logs the person out.
+  if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+      $params["path"], $params["domain"],
+      $params["secure"], $params["httponly"]
+    );
+  }
+  session_destroy();
+
+  $emailTaken = false;
   if (isset($_GET['new'])){
     extract($_POST);
     $query1 = "SELECT * FROM users WHERE email = '$rpi_email'";
     $res1 = $mysqli->query($query1);
     if ($res1->num_rows != 0){
-      echo "<h1>An account with that e-mail has already been created.</h1>";
+      $emailTaken = true;
     }
     else{
       $pwd = $password;
@@ -21,7 +31,7 @@
       //Storing image on the server - code from http://stackoverflow.com/questions/3509333/how-to-upload-save-files-with-desired-name
 
       $target = "";
-      $dir = $_SERVER['DOCUMENT_ROOT'].'/websys/WebSys-Website';
+      $dir = $_SERVER['DOCUMENT_ROOT'].'/WebSys-Website';
       if(count($_FILES)>0){
         $target = $dir.'/images/'.addslashes($_FILES['profilepic']['name']);
         move_uploaded_file($_FILES['profilepic']['tmp_name'], $target);
@@ -49,8 +59,8 @@
           $_SESSION['email']=$rpi_email;
           $_SESSION['fName']=$first_name;
           $_SESSION['lName']=$last_name;
-          //header('Location: meetups.php');
-          //exit;
+          header('Location: meetups.php');
+          exit;
         }
       }
       else{
@@ -84,6 +94,9 @@
                 <h2 class="title orange-text text-orange-darken-4"">Better latte than never!</h2>
                 <div class="content">
                   <h5>Sign up and join our community. &#9996</h5>
+                  <?php if($emailTaken){ ?>
+                  <p>An account with that e-mail has already been created.</p>
+                  <?php } ?>
                 </div>
               </div>
               <div class="col s8 offset-s2">

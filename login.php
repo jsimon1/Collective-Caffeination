@@ -1,5 +1,6 @@
 <?php
   include("connect.inc.php");
+  $success = true;
   if (isset($_GET['login'])){
     extract($_POST);
     // accesses the database
@@ -11,7 +12,6 @@
     // checks the password
     $checkPwd = crypt($password,$salt);
     if ($checkPwd == $row['password']){
-      $success = true;
       // starts the session
       session_start();
       $_SESSION['email']=$row['email'];
@@ -21,7 +21,6 @@
       exit;
     }
     else{
-      // throw and error with false
       $success = false;
     }
   }
@@ -50,7 +49,10 @@
             <div class="section">
               <div class="col s8 offset-s2">
                 <span class="title orange-text text-orange-darken-4"><h2>Welcome back!</h2></span>
-              </div>
+                <?php if(!$success){ ?>
+                <p>Incorrect username or password, please try again.</p>
+                <?php } ?>
+             </div>
               <div class="col s8 offset-s2">
                 <form action="login.php?login" method="post" class="card-panel">
                   <div class="row">
