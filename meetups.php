@@ -73,7 +73,7 @@
                         <div class="card horizontal">
                           <div class="card-image">
                             <a href="<?php echo $facebookArr[$row1['user_id']]; ?>"><img src=<?php $absLink = $row1['image'];
-                            $cutoff = strpos($row1['image'],'htdocs'); 
+                            $cutoff = strpos($row1['image'],'htdocs');
                             $link = substr($row1['image'], $cutoff+7);
                             $finalLink = 'http:\\'.$link;
                             echo $finalLink;?> class='circle responsive-imgs'></a>
@@ -100,7 +100,7 @@
                                     $divider = strpos($eventDateCutoff,'-');
                                     $eventMonthNum = substr($eventDateCutoff,0,$divider);
                                     $eventDayNum = substr($eventDateCutoff,$divider+1);
-                                    
+
                                     $eventMonth = "";
                                     if($eventMonthNum==1){
                                       $eventMonth = "JAN";
@@ -160,9 +160,12 @@
                                       echo "Evelyn's Cafe";
                                     }
                                   ?></p><br>
-                                  <p class="center-align valign"><?php echo $row1['description']; ?></p>
+
                             </div>
                           </div>
+                        </div>
+                        <div class=card-panel>
+                          <p class="center-align"><?php echo $row1['description']; ?></p>
                         </div>
                       <div  class="center-align">
                       <?php
