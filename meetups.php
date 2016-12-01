@@ -15,10 +15,18 @@
   }
 
   if ((isset($_GET['u']))&&(isset($_GET['e']))){
+    //If result set returns anything, person already signed up for event
     $usId = $_GET['u'];
     $eId = $_GET['e'];
-    $querySet = "INSERT INTO signups (user_id, event_id) VALUES ('$usId', '$eId')";
-    $resultSet = $mysqli->query($querySet);
+    $queryTest = "SELECT * FROM `signups` WHERE user_id = $usId AND event_id = $eid";
+    $resultTest = $mysqli->query($queryTest);
+    $rowTest = $resultTest->fetch_assoc();
+    print_r($rowTest);
+    echo "Size of ".count($rowTest);
+    if(count($rowTest)){
+      $querySet = "INSERT INTO signups (user_id, event_id) VALUES ('$usId', '$eId')";
+      $resultSet = $mysqli->query($querySet);
+    }
   }
 ?>
 <!DOCTYPE html>
@@ -46,7 +54,9 @@
               <?php if (isset($_GET['new'])){ ?>
                 <p>Your event was created successfully!</p>
               <?php }
-                    if (isset($_GET['u'])){}
+                    if (isset($resultSet)&&($resultSet)){ ?>
+                <p>You successfully signed up for the event.</p>
+              <?php } ?>
               ?>
               <h3 class="orange-text text-orange-darken-4">Somethings a-brewing</h3>
               <p>Check out these upcoming meetups</p>
