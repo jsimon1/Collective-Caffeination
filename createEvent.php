@@ -1,8 +1,8 @@
 <?php
   //createEvent
   include("connect.inc.php");
-  if (isset($_GET['success'])){
-    //Will go to the page just created
+  if(!isset($_SESSION['fName'])){
+    header('Location: landing.php');
   }
   $noLink = false;
   if (isset($_GET['create'])){
@@ -75,7 +75,7 @@
       // inserts the time entered in the database where we hold the meeting times
       $startingTime = $hour1.' '.$startT;
       $endingTime = $hour2.' '.$endT;
-      $query2 = "INSERT INTO events (user_id, image, location, start_time, end_time, description, date, max_participants) VALUES ('$uid', '$img', '$location', '$startingTime', '$endingTime', '$desc', '$finalDate', '$capacity')";
+      $query2 = "INSERT INTO events (user_id, image, location, start_time, end_time, description, date) VALUES ('$uid', '$img', '$location', '$startingTime', '$endingTime', '$desc', '$finalDate', '')";
       $result = $mysqli->query($query2);
       header('Location: meetups.php?new');
       //echo $query2;
@@ -150,23 +150,11 @@
                 <!-- allows users to pick a start time -->
                 <div class="row">
                   <div class="input-field col s6">
-                    <select name = "hour1" id="hour1">
-                      <option value = "0" disabled selected>What time is your event starting?</option>
-                      <option value = "9">9</option>
-                      <option value = "10">10</option>
-                      <option value = "11">11</option>
-                      <option value = "12">12</option>
-                      <option value = "1">1</option>
-                      <option value = "2">2</option>
-                      <option value = "3">3</option>
-                      <option value = "4">4</option>
-                      <option value = "5">5</option>
-                      <option value = "6">6</option>
-                    </select>
+                    <input placeholder="Hour" type="number" name="hour1" class="validate">
                     <label>Start time</label>
                   </div>
                   <div class="input-field col s6">
-                    <select name="startT" id="startT">
+                    <select name="startT">
                       <option value="AM" selected>AM</option>
                       <option value="PM">PM</option>
                     </select>
@@ -175,41 +163,14 @@
                 <!-- allows user to pick end time-->
                 <div class="row">
                   <div class="input-field col s6">
-                    <select name = "hour2" id = "hour2">
-                      <option value = "0" disabled selected>What time is your event ending?</option>
-                      <option value = "9">9</option>
-                      <option value = "10">10</option>
-                      <option value = "11">11</option>
-                      <option value = "12">12</option>
-                      <option value = "1">1</option>
-                      <option value = "2">2</option>
-                      <option value = "3">3</option>
-                      <option value = "4">4</option>
-                      <option value = "5">5</option>
-                      <option value = "6">6</option>
-                      <option value = "7">7</option>
-                      <option value = "8">8</option>
-                    </select>
+                    <input placeholder="Hour" type="number" name="hour2" class="validate">
                     <label>End time</label>
                   </div>
                   <div class="input-field col s6">
-                    <select name="endT" id="endT">
+                    <select name="endT">
                       <option value="AM" selected>AM</option>
                       <option value="PM">PM</option>
                     </select>
-                  </div>
-                </div>
-                <!-- Add max number of participants-->
-                <div class="row">
-                  <div class="input-field col s12">
-                    <select name="capacity">
-                      <option value="0" disabled selected>How many people at your meetup?</option>
-                      <option value="3">3 People</option>
-                      <option value="4">4 People</option>
-                      <option value="5">5 People</option>
-                      <option value="6">6 People</option>
-                    </select>
-                    <label>Max capacity</label>
                   </div>
                 </div>
                 <!-- allows user to add some comments about the meeting -->
@@ -242,29 +203,11 @@
     <script>
       $(document).ready(function() {
         $('select').material_select();
-        $("#startT").change(function() {
-        var val = $(this).val();
-        if (val == "AM") {
-            $("#hour1").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '9'>9</option><option value = '10'>10</option><option value = '11'>11</option><option value = '12'>12</option>");
-        } else if (val == "PM") {
-            $("#hour1").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '12'>12</option><option value = '1'>1</option><option value = '2'>2</option><option value = '3'>3</option><option value = '4'>4</option><option value = '5'>5</option><option value = '6'>6</option>");
-        }
-    });
-
-    $("#endT").change(function() {
-        var val = $(this).val();
-        if (val == "AM") {
-            $("#hour2").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '9'>9</option><option value = '10'>10</option><option value = '11'>11</option><option value = '12'>12</option>");
-        } else if (val == "PM") {
-            $("#hour2").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '12'>12</option><option value = '1'>1</option><option value = '2'>2</option><option value = '3'>3</option><option value = '4'>4</option><option value = '5'>5</option><option value = '6'>6</option>");
-        }
-    });
       });
       $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
       });
-
     </script>
 
   </body>

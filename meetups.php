@@ -1,6 +1,8 @@
 <?php
   include("connect.inc.php");
-
+  if(!isset($_SESSION['fName'])){
+    header('Location: landing.php');
+  }
   $signedUp = false;
   $resultSet;
 
