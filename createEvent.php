@@ -156,6 +156,12 @@
                       <option value = "10">10</option>
                       <option value = "11">11</option>
                       <option value = "12">12</option>
+                      <option value = "1">1</option>
+                      <option value = "2">2</option>
+                      <option value = "3">3</option>
+                      <option value = "4">4</option>
+                      <option value = "5">5</option>
+                      <option value = "6">6</option>
                     </select>
                     <label>Start time</label>
                   </div>
@@ -171,6 +177,9 @@
                   <div class="input-field col s6">
                     <select name = "hour2" id = "hour2">
                       <option value = "0" disabled selected>What time is your event ending?</option>
+                      <option value = "9">9</option>
+                      <option value = "10">10</option>
+                      <option value = "11">11</option>
                       <option value = "12">12</option>
                       <option value = "1">1</option>
                       <option value = "2">2</option>
