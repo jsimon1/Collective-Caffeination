@@ -150,7 +150,7 @@
                 <!-- allows users to pick a start time -->
                 <div class="row">
                   <div class="input-field col s6">
-                    <select name = "hour1">
+                    <select name = "hour1" id="hour1">
                       <option value = "0" disabled selected>What time is your event starting?</option>
                       <option value = "9">9</option>
                       <option value = "10">10</option>
@@ -160,7 +160,7 @@
                     <label>Start time</label>
                   </div>
                   <div class="input-field col s6">
-                    <select name="startT">
+                    <select name="startT" id="startT">
                       <option value="AM" selected>AM</option>
                       <option value="PM">PM</option>
                     </select>
@@ -169,7 +169,7 @@
                 <!-- allows user to pick end time-->
                 <div class="row">
                   <div class="input-field col s6">
-                    <select name = "hour1">
+                    <select name = "hour2" id = "hour2">
                       <option value = "0" disabled selected>What time is your event ending?</option>
                       <option value = "12">12</option>
                       <option value = "1">1</option>
@@ -184,7 +184,7 @@
                     <label>End time</label>
                   </div>
                   <div class="input-field col s6">
-                    <select name="endT">
+                    <select name="endT" id="endT">
                       <option value="AM" selected>AM</option>
                       <option value="PM">PM</option>
                     </select>
@@ -234,7 +234,6 @@
       $(document).ready(function() {
         $('select').material_select();
         $("#startT").change(function() {
-        alert("hi");
         var val = $(this).val();
         if (val == "AM") {
             $("#hour1").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '9'>9</option><option value = '10'>10</option><option value = '11'>11</option><option value = '12'>12</option>");
@@ -244,7 +243,6 @@
     });
 
     $("#endT").change(function() {
-        alert("hi");
         var val = $(this).val();
         if (val == "AM") {
             $("#hour2").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '9'>9</option><option value = '10'>10</option><option value = '11'>11</option><option value = '12'>12</option>");

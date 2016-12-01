@@ -4,19 +4,6 @@
   $signedUp = false;
   $resultSet;
 
-  //Getting signups and extracting necessary data for page
-  $querySignups = "SELECT * FROM `signups`";
-  $resultSignups = $mysqli->query($querySignups);
-  $eventSignups = array();
-  while($rowSignups = $resultSignups->fetch_assoc()) {
-    if(array_key_exists($rowSignups['event_id'],$eventSignups)){
-      $eventSignups[$rowSignups['event_id']]++;
-    }
-    else{
-      $eventSignups[$rowSignups['event_id']] = 1;
-    }
-  }
-
   if ((isset($_GET['u']))&&(isset($_GET['e']))){
     //If result set returns anything, person already signed up for event
     $usId = $_GET['u'];
@@ -31,6 +18,20 @@
       $signedUp = true;
     }
   }
+
+  //Getting signups and extracting necessary data for page
+  $querySignups = "SELECT * FROM `signups`";
+  $resultSignups = $mysqli->query($querySignups);
+  $eventSignups = array();
+  while($rowSignups = $resultSignups->fetch_assoc()) {
+    if(array_key_exists($rowSignups['event_id'],$eventSignups)){
+      $eventSignups[$rowSignups['event_id']]++;
+    }
+    else{
+      $eventSignups[$rowSignups['event_id']] = 1;
+    }
+  }
+
 ?>
 <!DOCTYPE html>
 <html>
