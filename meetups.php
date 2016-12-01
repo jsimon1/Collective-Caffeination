@@ -1,6 +1,9 @@
 <?php
   include("connect.inc.php");
 
+  $signedUp = false;
+  $resultSet;
+
   //Getting signups and extracting necessary data for page
   $querySignups = "SELECT * FROM `signups`";
   $resultSignups = $mysqli->query($querySignups);
@@ -18,14 +21,14 @@
     //If result set returns anything, person already signed up for event
     $usId = $_GET['u'];
     $eId = $_GET['e'];
-    $queryTest = "SELECT * FROM `signups` WHERE user_id = $usId AND event_id = $eid";
+    $queryTest = "SELECT * FROM `signups` WHERE user_id = $usId AND event_id = $eId";
     $resultTest = $mysqli->query($queryTest);
-    $rowTest = $resultTest->fetch_assoc();
-    print_r($rowTest);
-    echo "Size of ".count($rowTest);
-    if(count($rowTest)){
+    if(mysqli_num_rows($resultTest)==0){
       $querySet = "INSERT INTO signups (user_id, event_id) VALUES ('$usId', '$eId')";
       $resultSet = $mysqli->query($querySet);
+    }
+    else{
+      $signedUp = true;
     }
   }
 ?>
@@ -56,8 +59,10 @@
               <?php }
                     if (isset($resultSet)&&($resultSet)){ ?>
                 <p>You successfully signed up for the event.</p>
+              <?php }
+                    if ($signedUp){ ?>
+                <p>You already signed up for this event! </p>
               <?php } ?>
-              ?>
               <h3 class="orange-text text-orange-darken-4">Somethings a-brewing</h3>
               <p>Check out these upcoming meetups</p>
               <div class="divider"></div>
