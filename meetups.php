@@ -91,16 +91,16 @@
                             $cutoff = strpos($row1['image'],'htdocs');
                             $link = substr($row1['image'], $cutoff+7);
                             $finalLink = 'http:\\'.$link;
-                            echo $finalLink;?> class='circle responsive-imgs'></a>
+                            echo $finalLink;?> class='circle responsive-imgs' height='200px' width = '240px'></a>
                           </div>
                           <div class="card-stacked">
                             <div class="card-content">
                               <p class="center-align grey-text"><?php
                                 if(isset($eventSignups[$row1['id']])){
-                                  $numSpotsTaken = 6-$eventSignups[$row1['id']];
+                                  $numSpotsTaken = $row1['max_participants']-$eventSignups[$row1['id']];
                                 }
                                 else{
-                                  $numSpotsTaken = 6;
+                                  $numSpotsTaken = $row1['max_participants'];
                                 }
                                 echo $numSpotsTaken.' spots left';
                               ?></p>
