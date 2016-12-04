@@ -31,7 +31,7 @@
       //Storing image on the server - code from http://stackoverflow.com/questions/3509333/how-to-upload-save-files-with-desired-name
 
       $target = "";
-      $dir = $_SERVER['DOCUMENT_ROOT'].'/WebSys-Website';
+      $dir = $_SERVER['DOCUMENT_ROOT'].'/websys/Projects/homeworks/WebSys-Website';
       if(count($_FILES)>0){
         $target = $dir.'/images/'.addslashes($_FILES['profilepic']['name']);
         move_uploaded_file($_FILES['profilepic']['tmp_name'], $target);
