@@ -106,7 +106,7 @@
                 </div>
               </div>
               <div class="col s8 offset-s2">
-                <form action="signup.php?new" method="post" class="card-panel" enctype="multipart/form-data">
+                <form action="signup.php?new" name="signup" method="post" novalidate onsubmit="return validateForm()" class="card-panel" enctype="multipart/form-data">
                   <div class="row">
                     <div class="input-field col s6">
                       <input placeholder="First Name" name="first_name" id="first_name" type="text" class="validate">
@@ -163,5 +163,6 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
   </body>
 </html>
