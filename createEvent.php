@@ -114,7 +114,7 @@
               <?php } ?>
             </div>
             <div class="col s8 offset-s2">
-              <form action="createEvent.php" name = "createEvent" method="post" onsubmit="return validateForm()" novalidate class="card-panel">
+              <form action="createEvent.php?create" name = "createEvent" method="post" onsubmit="return validateForm()" novalidate class="card-panel">
                 <div class="row">
                   <div class="input-field col s12">
                     <!-- Give users options to pick where they want to meet using common areas around campus -->
