@@ -114,7 +114,7 @@
               <?php } ?>
             </div>
             <div class="col s8 offset-s2">
-              <form action="createEvent.php?create" method="post" class="card-panel">
+              <form action="createEvent.php" name = "createEvent" method="post" onsubmit="return validateForm()" novalidate class="card-panel">
                 <div class="row">
                   <div class="input-field col s12">
                     <!-- Give users options to pick where they want to meet using common areas around campus -->
@@ -133,19 +133,11 @@
                 <div class="row">
                   <div class="input-field col s12">
                     <!-- user now is allowed to pick a date they want to meet -->
-                    <input type="date" name="uDate" id="uDate"class="datepicker">
+                    <input type="date" name="uDate" id="uDate" class="datepicker">
                     <label>Pick a date</label>
                   </div>
                 </div>
-                <!-- input for the time to meet - Keeping for now for Firefox implementation
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input placeholder="Month" type="number" name = "month" class = "validate">
-                  </div>
-                  <div class="input-field col s6">
-                    <input placeholder="Day" type="number" name = "day" class="validate">
-                  </div>
-                </div>-->
+        
 
                 <!-- allows users to pick a start time -->
                 <div class="row">
@@ -238,34 +230,7 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <!-- runs date js after page is rendered -->
-    <script>
-      $(document).ready(function() {
-        $('select').material_select();
-        $("#startT").change(function() {
-        var val = $(this).val();
-        if (val == "AM") {
-            $("#hour1").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '9'>9</option><option value = '10'>10</option><option value = '11'>11</option><option value = '12'>12</option>");
-        } else if (val == "PM") {
-            $("#hour1").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '12'>12</option><option value = '1'>1</option><option value = '2'>2</option><option value = '3'>3</option><option value = '4'>4</option><option value = '5'>5</option><option value = '6'>6</option>");
-        }
-    });
-
-    $("#endT").change(function() {
-        var val = $(this).val();
-        if (val == "AM") {
-            $("#hour2").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '9'>9</option><option value = '10'>10</option><option value = '11'>11</option><option value = '12'>12</option>");
-        } else if (val == "PM") {
-            $("#hour2").html("<option value = '0' disabled selected>What time is your event starting?</option><option value = '12'>12</option><option value = '1'>1</option><option value = '2'>2</option><option value = '3'>3</option><option value = '4'>4</option><option value = '5'>5</option><option value = '6'>6</option>");
-        }
-    });
-      });
-      $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
-      });
-
-    </script>
-
+    <!-- runs other js after page is rendered -->
+    <script type="text/javascript" src="js/createEvent.js"></script>
   </body>
 </html>
